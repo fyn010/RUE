@@ -2,10 +2,10 @@
 ---@module GUI.Tabs.PlayerTab
 local PlayerTab = {}
 
-local Library = require("GUI/Library")
-local State = require("Core/State")
-local Teleport = require("Features/Player/Teleport")
-local AutoFarm = require("Features/Player/AutoFarm")
+local Library = ModuleLoader.load("GUI/Library")
+local State = ModuleLoader.load("Core/State")
+local Teleport = ModuleLoader.load("Features/Player/Teleport")
+local AutoFarm = ModuleLoader.load("Features/Player/AutoFarm")
 
 PlayerTab.tab = nil
 

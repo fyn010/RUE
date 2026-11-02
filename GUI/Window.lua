@@ -2,9 +2,9 @@
 ---@module GUI.Window
 local Window = {}
 
-local Library = require("GUI/Library")
-local Constants = require("Core/Constants")
-local State = require("Core/State")
+local Library = ModuleLoader.load("GUI/Library")
+local Constants = ModuleLoader.load("Core/Constants")
+local State = ModuleLoader.load("Core/State")
 
 Window.mainWindow = nil
 

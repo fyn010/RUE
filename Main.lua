@@ -12,6 +12,11 @@ getfenv().PP_SCRAMBLE_NUM = function(...) return ... end
 getfenv().PP_SCRAMBLE_STR = function(...) return ... end
 getfenv().PP_SCRAMBLE_RE_NUM = function(...) return ... end
 
+-- Load ModuleLoader first
+local moduleLoaderContent = readfile("RUE/Core/ModuleLoader.lua")
+local moduleLoaderChunk = loadstring(moduleLoaderContent, "@RUE/Core/ModuleLoader.lua")
+local ModuleLoader = moduleLoaderChunk()
+
 -- Module table
 local RUE = {
     version = "1.0.0",
@@ -24,105 +29,105 @@ local RUE = {
 
 RUE.__index = RUE
 
--- Requires
+-- Requires (using ModuleLoader)
 ---@module Core.Services
-local Services = require("Core/Services")
+local Services = ModuleLoader.load("Core/Services")
 
 ---@module Core.Constants
-local Constants = require("Core/Constants")
+local Constants = ModuleLoader.load("Core/Constants")
 
 ---@module Core.State
-local State = require("Core/State")
+local State = ModuleLoader.load("Core/State")
 
 ---@module Core.Utilities
-local Utilities = require("Core/Utilities")
+local Utilities = ModuleLoader.load("Core/Utilities")
 
 ---@module Utility.Maid
-local Maid = require("Utility/Maid")
+local Maid = ModuleLoader.load("Utility/Maid")
 
 ---@module Utility.Signal
-local Signal = require("Utility/Signal")
+local Signal = ModuleLoader.load("Utility/Signal")
 
 ---@module Utility.Logger
-local Logger = require("Utility/Logger")
+local Logger = ModuleLoader.load("Utility/Logger")
 
 ---@module Utility.Profiler
-local Profiler = require("Utility/Profiler")
+local Profiler = ModuleLoader.load("Utility/Profiler")
 
 ---@module Utility.Data2Code
-local Data2Code = require("Utility/Data2Code")
+local Data2Code = ModuleLoader.load("Utility/Data2Code")
 
 ---@module AntiCheat.Bypass
-local Bypass = require("AntiCheat/Bypass")
+local Bypass = ModuleLoader.load("AntiCheat/Bypass")
 
 ---@module AntiCheat.HookProtection
-local HookProtection = require("AntiCheat/HookProtection")
+local HookProtection = ModuleLoader.load("AntiCheat/HookProtection")
 
 ---@module AntiCheat.EnvironmentSpoof
-local EnvironmentSpoof = require("AntiCheat/EnvironmentSpoof")
+local EnvironmentSpoof = ModuleLoader.load("AntiCheat/EnvironmentSpoof")
 
 ---@module Features.Combat.SilentAim
-local SilentAim = require("Features/Combat/SilentAim")
+local SilentAim = ModuleLoader.load("Features/Combat/SilentAim")
 
 ---@module Features.Combat.Aimbot
-local Aimbot = require("Features/Combat/Aimbot")
+local Aimbot = ModuleLoader.load("Features/Combat/Aimbot")
 
 ---@module Features.Combat.HitboxExpander
-local HitboxExpander = require("Features/Combat/HitboxExpander")
+local HitboxExpander = ModuleLoader.load("Features/Combat/HitboxExpander")
 
 ---@module Features.Combat.GunMods
-local GunMods = require("Features/Combat/GunMods")
+local GunMods = ModuleLoader.load("Features/Combat/GunMods")
 
 ---@module Features.Movement.Fly
-local Fly = require("Features/Movement/Fly")
+local Fly = ModuleLoader.load("Features/Movement/Fly")
 
 ---@module Features.Movement.Speed
-local Speed = require("Features/Movement/Speed")
+local Speed = ModuleLoader.load("Features/Movement/Speed")
 
 ---@module Features.Movement.Noclip
-local Noclip = require("Features/Movement/Noclip")
+local Noclip = ModuleLoader.load("Features/Movement/Noclip")
 
 ---@module Features.Movement.InfiniteStamina
-local InfiniteStamina = require("Features/Movement/InfiniteStamina")
+local InfiniteStamina = ModuleLoader.load("Features/Movement/InfiniteStamina")
 
 ---@module Features.Visuals.ESP
-local ESP = require("Features/Visuals/ESP")
+local ESP = ModuleLoader.load("Features/Visuals/ESP")
 
 ---@module Features.Visuals.Tracers
-local Tracers = require("Features/Visuals/Tracers")
+local Tracers = ModuleLoader.load("Features/Visuals/Tracers")
 
 ---@module Features.Player.Teleport
-local Teleport = require("Features/Player/Teleport")
+local Teleport = ModuleLoader.load("Features/Player/Teleport")
 
 ---@module Features.Player.AutoFarm
-local AutoFarm = require("Features/Player/AutoFarm")
+local AutoFarm = ModuleLoader.load("Features/Player/AutoFarm")
 
 ---@module Features.Exploits.Remotes
-local Remotes = require("Features/Exploits/Remotes")
+local Remotes = ModuleLoader.load("Features/Exploits/Remotes")
 
 ---@module GUI.Library
-local Library = require("GUI/Library")
+local Library = ModuleLoader.load("GUI/Library")
 
 ---@module GUI.Window
-local Window = require("GUI/Window")
+local Window = ModuleLoader.load("GUI/Window")
 
 ---@module GUI.Tabs.CombatTab
-local CombatTab = require("GUI/Tabs/CombatTab")
+local CombatTab = ModuleLoader.load("GUI/Tabs/CombatTab")
 
 ---@module GUI.Tabs.MovementTab
-local MovementTab = require("GUI/Tabs/MovementTab")
+local MovementTab = ModuleLoader.load("GUI/Tabs/MovementTab")
 
 ---@module GUI.Tabs.VisualsTab
-local VisualsTab = require("GUI/Tabs/VisualsTab")
+local VisualsTab = ModuleLoader.load("GUI/Tabs/VisualsTab")
 
 ---@module GUI.Tabs.PlayerTab
-local PlayerTab = require("GUI/Tabs/PlayerTab")
+local PlayerTab = ModuleLoader.load("GUI/Tabs/PlayerTab")
 
 ---@module GUI.Tabs.ExploitsTab
-local ExploitsTab = require("GUI/Tabs/ExploitsTab")
+local ExploitsTab = ModuleLoader.load("GUI/Tabs/ExploitsTab")
 
 ---@module GUI.Tabs.SettingsTab
-local SettingsTab = require("GUI/Tabs/SettingsTab")
+local SettingsTab = ModuleLoader.load("GUI/Tabs/SettingsTab")
 
 -- Module-level state
 local rueMaid = Maid.new()

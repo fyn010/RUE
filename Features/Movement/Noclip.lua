@@ -2,10 +2,10 @@
 ---@module Features.Movement.Noclip
 local Noclip = {}
 
-local Constants = require("Core/Constants")
-local State = require("Core/State")
-local Services = require("Core/Services")
-local Logger = require("Utility/Logger")
+local Constants = ModuleLoader.load("Core/Constants")
+local State = ModuleLoader.load("Core/State")
+local Services = ModuleLoader.load("Core/Services")
+local Logger = ModuleLoader.load("Utility/Logger")
 
 Noclip.enabled = false
 Noclip.noclipConnection = nil

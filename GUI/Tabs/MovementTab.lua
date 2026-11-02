@@ -2,12 +2,12 @@
 ---@module GUI.Tabs.MovementTab
 local MovementTab = {}
 
-local Library = require("GUI/Library")
-local State = require("Core/State")
-local Fly = require("Features/Movement/Fly")
-local Speed = require("Features/Movement/Speed")
-local Noclip = require("Features/Movement/Noclip")
-local InfiniteStamina = require("Features/Movement/InfiniteStamina")
+local Library = ModuleLoader.load("GUI/Library")
+local State = ModuleLoader.load("Core/State")
+local Fly = ModuleLoader.load("Features/Movement/Fly")
+local Speed = ModuleLoader.load("Features/Movement/Speed")
+local Noclip = ModuleLoader.load("Features/Movement/Noclip")
+local InfiniteStamina = ModuleLoader.load("Features/Movement/InfiniteStamina")
 
 MovementTab.tab = nil
 

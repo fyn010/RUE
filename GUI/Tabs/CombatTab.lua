@@ -2,12 +2,12 @@
 ---@module GUI.Tabs.CombatTab
 local CombatTab = {}
 
-local Library = require("GUI/Library")
-local State = require("Core/State")
-local SilentAim = require("Features/Combat/SilentAim")
-local Aimbot = require("Features/Combat/Aimbot")
-local HitboxExpander = require("Features/Combat/HitboxExpander")
-local GunMods = require("Features/Combat/GunMods")
+local Library = ModuleLoader.load("GUI/Library")
+local State = ModuleLoader.load("Core/State")
+local SilentAim = ModuleLoader.load("Features/Combat/SilentAim")
+local Aimbot = ModuleLoader.load("Features/Combat/Aimbot")
+local HitboxExpander = ModuleLoader.load("Features/Combat/HitboxExpander")
+local GunMods = ModuleLoader.load("Features/Combat/GunMods")
 
 CombatTab.tab = nil
 

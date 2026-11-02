@@ -2,10 +2,10 @@
 ---@module GUI.Tabs.SettingsTab
 local SettingsTab = {}
 
-local Library = require("GUI/Library")
-local State = require("Core/State")
-local Constants = require("Core/Constants")
-local Window = require("GUI/Window")
+local Library = ModuleLoader.load("GUI/Library")
+local State = ModuleLoader.load("Core/State")
+local Constants = ModuleLoader.load("Core/Constants")
+local Window = ModuleLoader.load("GUI/Window")
 
 SettingsTab.tab = nil
 
@@ -63,17 +63,17 @@ function SettingsTab.initialize(window)
     local perfSection = Library.createSection(SettingsTab.tab, "Performance")
 
     Library.createToggle(perfSection, "Enable Profiler", false, function(value)
-        local Profiler = require("Utility/Profiler")
+        local Profiler = ModuleLoader.load("Utility/Profiler")
         Profiler.setEnabled(value)
     end)
 
     Library.createButton(perfSection, "Print Profiler Results", function()
-        local Profiler = require("Utility/Profiler")
+        local Profiler = ModuleLoader.load("Utility/Profiler")
         Profiler.printResults()
     end)
 
     Library.createButton(perfSection, "Reset Profiler", function()
-        local Profiler = require("Utility/Profiler")
+        local Profiler = ModuleLoader.load("Utility/Profiler")
         Profiler.reset()
     end)
 

@@ -10,7 +10,7 @@ Data2Code.Methods = nil
 function Data2Code.load()
     if Data2Code.loaded then return Data2Code.Class, Data2Code.Methods end
 
-    local Constants = require("Core/Constants")
+    local Constants = ModuleLoader.load("Core/Constants")
     local success, result = pcall(function()
         return loadstring(game:HttpGet(Constants.DATA2CODE_URL))()
     end)

@@ -2,9 +2,9 @@
 ---@module AntiCheat.HookProtection
 local HookProtection = {}
 
-local Constants = require("Core/Constants")
-local Utilities = require("Core/Utilities")
-local Logger = require("Utility/Logger")
+local Constants = ModuleLoader.load("Core/Constants")
+local Utilities = ModuleLoader.load("Core/Utilities")
+local Logger = ModuleLoader.load("Utility/Logger")
 
 HookProtection.hooks = {}
 HookProtection.originals = {}

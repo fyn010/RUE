@@ -2,11 +2,11 @@
 ---@module Features.Visuals.ESP
 local ESP = {}
 
-local Constants = require("Core/Constants")
-local State = require("Core/State")
-local Services = require("Core/Services")
-local Utilities = require("Core/Utilities")
-local Logger = require("Utility/Logger")
+local Constants = ModuleLoader.load("Core/Constants")
+local State = ModuleLoader.load("Core/State")
+local Services = ModuleLoader.load("Core/Services")
+local Utilities = ModuleLoader.load("Core/Utilities")
+local Logger = ModuleLoader.load("Utility/Logger")
 
 ESP.enabled = false
 ESP.espObjects = {}

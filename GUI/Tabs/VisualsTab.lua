@@ -2,10 +2,10 @@
 ---@module GUI.Tabs.VisualsTab
 local VisualsTab = {}
 
-local Library = require("GUI/Library")
-local State = require("Core/State")
-local ESP = require("Features/Visuals/ESP")
-local Tracers = require("Features/Visuals/Tracers")
+local Library = ModuleLoader.load("GUI/Library")
+local State = ModuleLoader.load("Core/State")
+local ESP = ModuleLoader.load("Features/Visuals/ESP")
+local Tracers = ModuleLoader.load("Features/Visuals/Tracers")
 
 VisualsTab.tab = nil
 

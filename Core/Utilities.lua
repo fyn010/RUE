@@ -2,7 +2,7 @@
 ---@module Core.Utilities
 local Utilities = {}
 
-local Constants = require("Core/Constants")
+local Constants = ModuleLoader.load("Core/Constants")
 
 -- Solara protection wrapper
 ---Wraps a function with Solara's protection to hide it from detection
@@ -52,8 +52,8 @@ end
 ---@param visibleCheck boolean
 ---@return Player?, number?, Vector3?
 function Utilities.getClosestPlayer(fovRadius, teamCheck, visibleCheck)
-    local Services = require("Core/Services")
-    local State = require("Core/State")
+    local Services = ModuleLoader.load("Core/Services")
+    local State = ModuleLoader.load("Core/State")
 
     local localPlayer = Services.playersService.LocalPlayer
     if not localPlayer then return nil, nil, nil end
